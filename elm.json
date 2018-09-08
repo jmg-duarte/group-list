@@ -1,17 +1,20 @@
 {
-    "name": "jmg-duarte/group-flip",
     "type": "package",
-    "version": "1.0.0",
+    "name": "jmg-duarte/group-flip",
     "summary": "Functions for List grouping",
-    "repository": "https://github.com/jmg-duarte/group-list.git",
     "license": "BSD-3-Clause",
-    "source-directories": [
-        "src"
+    "version": "1.0.0",
+    "exposed-modules": [
+        "GroupList"
     ],
-    "exposed-modules": ["GroupList"],
+    "elm-version": "0.17.1 <= v <= 0.19.0",
     "dependencies": {
         "elm/core": "1.0.0 <= v < 2.0.0"
     },
-    "elm-version": "0.17.1 <= v <= 0.19.0",
-    "test-dependencies" :{}
+    "test-dependencies": {
+        "elm-explorations/test": "1.1.0 <= v < 2.0.0"
+    },
+    "source-directories": [
+        "src"
+    ]
 }
