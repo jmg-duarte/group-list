@@ -31,26 +31,35 @@ testNonEmptyLists =
             [ test "non empty list returns l inside a list" <|
                 \_ ->
                     let
-                        l =
+                        input =
                             [ 1, 2, 3, 4, 5 ]
+
+                        output =
+                            [ input ]
                     in
-                    Expect.equal [ l ] <| group 0 l
+                    Expect.equal output <| group 0 input
             ]
         , describe "n < 0"
             [ test "non empty list of integers returns l inside a list" <|
                 \_ ->
                     let
-                        l =
+                        input =
                             [ 1, 2, 3, 4, 5 ]
+
+                        output =
+                            [ input ]
                     in
-                    Expect.equal [ l ] <| group -1 l
+                    Expect.equal output <| group -1 input
             , test "non empty list of characters returns l inside a list" <|
                 \_ ->
                     let
-                        l =
+                        input =
                             [ 'A', 'B', 'C', 'D', 'E' ]
+
+                        output =
+                            [ input ]
                     in
-                    Expect.equal [ l ] <| group -1 l
+                    Expect.equal output <| group -1 input
             ]
         , describe "n > 0"
             [ test "non empty list of integers returns a list of lists sized n" <|
