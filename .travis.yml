@@ -19,6 +19,7 @@ before_install:
 install:
   - node --version
   - npm --version
+  - elm install elm-community/html-test-runner
   - npm install -g elm@$ELM_VERSION elm-test
   - git clone https://github.com/NoRedInk/elm-ops-tooling
   - elm-ops-tooling/with_retry.rb elm package install --yes
