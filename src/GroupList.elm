@@ -13,7 +13,12 @@ import List exposing (..)
 group : Int -> List a -> List (List a)
 group n l =
     if n <= 0 then
-        [ l ]
+        case l of
+            [] ->
+                []
+
+            _ ->
+                [ l ]
 
     else
         case l of
