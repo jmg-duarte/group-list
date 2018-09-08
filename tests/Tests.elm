@@ -37,11 +37,18 @@ testNonEmptyLists =
                     Expect.equal [ l ] <| group 0 l
             ]
         , describe "n < 0"
-            [ test "non empty list returns l inside a list" <|
+            [ test "non empty list of integers returns l inside a list" <|
                 \_ ->
                     let
                         l =
                             [ 1, 2, 3, 4, 5 ]
+                    in
+                    Expect.equal [ l ] <| group -1 l
+            , test "non empty list of characters returns l inside a list" <|
+                \_ ->
+                    let
+                        l =
+                            [ 'A', 'B', 'C', 'D', 'E' ]
                     in
                     Expect.equal [ l ] <| group -1 l
             ]
