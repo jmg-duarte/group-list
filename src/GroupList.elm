@@ -1,4 +1,4 @@
-module GroupList exposing (group, groupInterleave)
+module GroupList exposing (group, interleave)
 
 import List exposing (..)
 
@@ -12,21 +12,25 @@ import List exposing (..)
 -}
 group : Int -> List a -> List (List a)
 group n l =
-    case l of
-        [] ->
-            []
+    if n <= 0 then
+        [ l ]
 
-        _ ->
-            List.take n l :: (group n <| List.drop n l)
+    else
+        case l of
+            [] ->
+                []
+
+            _ ->
+                List.take n l :: (group n <| List.drop n l)
 
 
 {-| Interleave elements in a list at a specified interval
 
-    groupInterleave 3 -1 <| List.range 0 9 == [ [ 0, 1, 2 ], [ 3, 4, 5 ], [ 6, 7, 8 ], [ 9 ] ]
+    interleave 3 -1 <| List.range 0 9 == [ [ 0, 1, 2 ], [ 3, 4, 5 ], [ 6, 7, 8 ], [ 9 ] ]
 
-    groupInterleave 3 '.' "Hello, World!" == [ 'H', 'e', 'l', '.', 'l', 'o', ',', '.', ' ', 'W', 'o', '.', 'r', 'l', 'd', '.', '!' ]
+    interleave 3 '.' "Hello, World!" == [ 'H', 'e', 'l', '.', 'l', 'o', ',', '.', ' ', 'W', 'o', '.', 'r', 'l', 'd', '.', '!' ]
 
 -}
-groupInterleave : Int -> a -> List a -> List a
-groupInterleave n val l =
+interleave : Int -> a -> List a -> List a
+interleave n val l =
     group n l |> List.intersperse [ val ] |> List.concat
