@@ -1,6 +1,6 @@
 {
     "type": "package",
-    "name": "jmg-duarte/group-flip",
+    "name": "jmg-duarte/group-list",
     "summary": "Functions for List grouping",
     "license": "BSD-3-Clause",
     "version": "1.0.0",
