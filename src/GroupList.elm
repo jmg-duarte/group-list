@@ -1,5 +1,11 @@
 module GroupList exposing (group, interleave)
 
+{-| This module adds better grouping and interleaving for List
+
+# Functions
+@docs group, interleave
+-}
+
 import List exposing (..)
 
 
